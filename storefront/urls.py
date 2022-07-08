@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = 'Anchit Pokharel demo project'
+admin.site.index_title = 'Storefront Admin Dashboard'
+
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('playground/', include('playground.urls')),
