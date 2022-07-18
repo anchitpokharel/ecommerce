@@ -8,7 +8,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework import status
 from .models import *
 from django.db.models.aggregates import Count
-from .serializers import CollectionSerializer, ProductSerializer
+from .serializers import *
 
 # Create your views here.
 class ProductViewSet(ModelViewSet):
@@ -35,3 +35,7 @@ class CollectionViewSet(ModelViewSet):
 
         collection.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)     
+
+class ReviewViewSet(ModelViewSet):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer

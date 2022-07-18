@@ -1,0 +1,4 @@
+djnago
+djnago-debug-toolbar
+djangorestframework
+psycopg2-binary

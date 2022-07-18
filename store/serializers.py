@@ -1,5 +1,6 @@
 import collections
 from itertools import product
+from pyexpat import model
 from django.db.models.aggregates import Count
 from rest_framework import serializers
 from .models import *
@@ -47,3 +48,11 @@ class ProductSerializer(serializers.ModelSerializer):
     #     if data['password'] != data['confirm_password']:
     #         return serializers.ValidationError("Passwords do not match")
     #     return data
+    
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = [
+            'name',
+            'description'
+        ]
